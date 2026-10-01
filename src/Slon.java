@@ -7,7 +7,7 @@ public class Slon {
         int b = in.nextInt();
         int c = in.nextInt();
         int d = in.nextInt();
-        if ((a-c)==(b-d)) {
+        if (Math.abs(a-c)==Math.abs(b-d)) {
             System.out.println("YES");
         } else {
             System.out.println("NO");

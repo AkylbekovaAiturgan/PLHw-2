@@ -7,7 +7,7 @@ public class Ferzi {
         int b = in.nextInt();
         int c = in.nextInt();
         int d = in.nextInt();
-        if (a==c || b==d || Math.abs(a-c)==Math.abs(b-d)) {
+        if ((Math.abs(a-c)==2 && Math.abs(b-d)==1) || (Math.abs(a-c)==1 && Math.abs(b-d)==2)) {
             System.out.println("YES");
         } else {
             System.out.println("NO");

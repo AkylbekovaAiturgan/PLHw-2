@@ -7,10 +7,14 @@ public class Kotlety {
         int m = in.nextInt();
         int n = in.nextInt();
 
-        if (k==n){
-            System.out.println((m*k)*2);
-        }else{
-            System.out.println((m*n)*2);
+        int t;
+
+        if (n<=k) {
+            t=2*m;
+        } else {
+            t = (2*n*m+k-1)/k;
         }
+
+        System.out.println(t);
     }
 }

@@ -7,14 +7,15 @@ public class Kotlety {
         int m = in.nextInt();
         int n = in.nextInt();
 
-        int t;
+        int time;
 
-        if (n<=k) {
-            t=2*m;
+        if (n <= k) {
+            time = 2 * m;
         } else {
-            t = (2*n*m+k-1)/k;
+            int rounds = (2 * n + k - 1) / k;
+            time = rounds * m;
         }
 
-        System.out.println(t);
+        System.out.println(time);
     }
 }

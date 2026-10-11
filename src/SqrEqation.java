@@ -4,20 +4,18 @@ public class SqrEqation {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
+        double a = in.nextDouble();
+        double b = in.nextDouble();
+        double c = in.nextDouble();
 
         double D = b * b - 4 * a * c;
 
         if (D > 0) {
-            double x1 = (-b + Math.sqrt(D)) / (2 * a);
-            double x2 = (-b - Math.sqrt(D)) / (2 * a);
-            System.out.println(x1 + " " + x2);
-        } else if (D == 0) {
-            double x = -b / (2 * a);
-            System.out.println(x);
-        } else {
+            System.out.println((-b + Math.sqrt(D)) / (2 * a));
+            System.out.println((-b - Math.sqrt(D)) / (2 * a));
+        } else if (Math.abs(D) < 1e-10) {
+            System.out.println(-b / (2 * a));
+        }else{
             System.out.println(0);
         }
     }

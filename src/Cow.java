@@ -6,12 +6,14 @@ public class Cow {
 
         int n = in.nextInt();
 
-        if (n==1){
-            System.out.println(n + " korova ");
-        }else if (n<2 &&  n>4){
-            System.out.println(n + " korovy ");
-        }else{
-            System.out.println(n + " korov " );
+        if (n % 100 >= 11 && n % 100 <= 14) {
+            System.out.println(n + " korov");
+        } else if (n % 10 == 1) {
+            System.out.println(n + " korova");
+        } else if (n % 10 >= 2 && n % 10 <= 4) {
+            System.out.println(n + " korovy");
+        } else {
+            System.out.println(n + " korov");
         }
     }
 }

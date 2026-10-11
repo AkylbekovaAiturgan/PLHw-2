@@ -18,7 +18,7 @@ public class SosedyCoordinate {
         if (y < N)
             System.out.println(x + " " + (y + 1));
 
-        if (x < M)
+        if (x< M)
             System.out.println((x + 1) + " " + y);
     }
 }

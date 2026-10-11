@@ -8,12 +8,28 @@ public class TypeTringle {
             int b = in.nextInt();
             int c = in.nextInt();
 
-           if (a*a+b*b==c*c){
-               System.out.println("right");
-           }else if (a*a+b*b>c*c){
-               System.out.println("acute");
-           }else{
-               System.out.println("obtuse");
-           }
-    }
+            if (a + b <= c || a + c <= b || b + c <= a) {
+                System.out.println("impossible");
+            } else {
+                if (a > b && a > c) {
+                    int t = a;
+                    a = c;
+                    c = t;
+                }
+
+                if (b > c) {
+                    int t = b;
+                    b = c;
+                    c = t;
+                }
+
+                if (a * a + b * b == c * c) {
+                    System.out.println("right");
+                } else if (a * a + b * b > c * c) {
+                    System.out.println("acute");
+                } else {
+                    System.out.println("obtuse");
+                }
+            }
+        }
 }

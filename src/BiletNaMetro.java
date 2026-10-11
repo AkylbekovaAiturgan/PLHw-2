@@ -6,36 +6,30 @@ public class BiletNaMetro {
 
         int n = in.nextInt();
 
-        int one = 0;
-        int ten = 0;
-        int sixty = 0;
-        
-        if (n >= 60) {
-            sixty = n / 60;
-            n = n % 60;
-        }
+        int one = 0, ten = 0, sixty = 0;
+
+        sixty = n / 60;
+        n %= 60;
 
         if (n > 0) {
             if (n <= 9) {
-                if (n * 15 >= 125) {
-                    ten = 1;
-                } else {
-                    one = n;
-                }
-            } else if (n <= 10) {
-                ten = 1;
+                if (n * 15 <= 125) one = n;
+                else ten = 1;
             } else {
                 ten = n / 10;
-                n = n % 10;
+                n %= 10;
 
                 if (n > 0) {
-                    if (n * 15 > 125 - ten * 125) {
-                        ten++;
-                    } else {
-                        one = n;
-                    }
+                    if (n * 15 < 125) one = n;
+                    else ten++;
                 }
             }
+        }
+
+        if (one * 15 + ten * 125 > 440) {
+            sixty++;
+            one = 0;
+            ten = 0;
         }
 
         System.out.println(one + " " + ten + " " + sixty);
